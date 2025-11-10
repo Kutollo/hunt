@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>2-Year Anniversary 💖</title>
+<link href="https://fonts.googleapis.com/css2?family=Dancing+Script&family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+<style>
+  html, body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    width: 100%;
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(135deg, #ffc6e5, #ff9fdb, #ffb0ec);
+    color: #5a0044;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .container {
+    background: rgba(255,255,255,0.95);
+    width: 90%;
+    max-width: 480px;
+    height: 90%;
+    border-radius: 25px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    box-shadow: 0 0 30px rgba(255,150,220,0.6);
+    position: relative;
+  }
+
+  h1 {
+    font-family: 'Dancing Script', cursive;
+    font-size: 2rem;
+    margin: 0;
+    text-align: center;
+  }
+
+  h2 {
+    font-size: 1.2rem;
+    color: #9b027f;
+    margin: 5px 0 15px 0;
+    text-align: center;
+  }
+
+  p {
+    font-size: 1rem;
+    line-height: 1.4;
+    margin: 5px 0;
+    text-align: center;
+  }
+
+  .rules {
+    background: #ffe0f2;
+    border-radius: 20px;
+    padding: 10px;
+    font-size: 0.95rem;
+    flex-grow: 1;
+    overflow-y: auto;
+    margin-bottom: 10px;
+  }
+
+  ul {
+    margin: 0;
+    padding-left: 18px;
+  }
+
+  button {
+    background: #ff4fb3;
+    color: white;
+    border: none;
+    padding: 12px 25px;
+    border-radius: 30px;
+    font-size: 1rem;
+    cursor: pointer;
+    box-shadow: 0 0 15px rgba(255,90,190,0.6);
+    transition: transform 0.2s ease;
+  }
+
+  button:hover { transform: scale(1.05); }
+
+  .hidden { display: none; }
+
+  .hearts span {
+    position: absolute;
+    bottom: -10px;
+    color: #ff4fa8;
+    font-size: 1.5rem;
+    animation: float 6s linear infinite;
+    opacity: 0.7;
+  }
+
+  @keyframes float {
+    0% { transform: translateY(0) scale(1); opacity: 0.6; }
+    50% { opacity: 1; }
+    100% { transform: translateY(-800px) scale(1.8); opacity: 0; }
+  }
+
+</style>
+</head>
+<body>
+
+<div class="hearts">
+  <span style="left:10%; animation-delay:0s;">💗</span>
+  <span style="left:30%; animation-delay:1s;">💖</span>
+  <span style="left:50%; animation-delay:2s;">💕</span>
+  <span style="left:70%; animation-delay:3s;">💞</span>
+  <span style="left:90%; animation-delay:4s;">💘</span>
+</div>
+
+<div class="container">
+  <div>
+    <h1>Happy 2-Year Anniversary 💖</h1>
+    <h2>My Love, My Heart, My Everything</h2>
+    <p>August marked two beautiful years of loving you. 🌸 Every moment with you has been sweet, soft and magical. Tonight, you begin a secret journey crafted just for you.</p>
+    
+    <div class="rules">
+      <h3>Rules of the Journey 💗</h3>
+      <ul>
+        <li>✨ Each QR unlocks a special pathway.</li>
+        <li>✨ Read the note first before revealing the next clue.</li>
+        <li>✨ Follow each clue carefully to find the next surprise.</li>
+        <li>✨ Enjoy each moment, every smile, every blush. I Love You 😘</li>
+      </ul>
+    </div>
+  </div>
+  
+  <div>
+    <button onclick="showFirstClue()">Begin the Journey 💗</button>
+    <div id="firstClue" class="hidden" style="margin-top:15px; font-size:1.1rem;">
+      <h3>🔐 Your First Clue</h3>
+      <p>I am where your head rests at night… come lift me😘</p>
+    </div>
+  </div>
+</div>
+
+<script>
+function showFirstClue() {
+  document.getElementById('firstClue').classList.remove('hidden');
+}
+</script>
+
+</body>
+</html>

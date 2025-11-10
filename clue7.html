@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Surprise 7💖</title>
+<link href="https://fonts.googleapis.com/css2?family=Dancing+Script&family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+<style>
+  html, body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    width: 100%;
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(135deg, #ffd8f0, #ffc2e6, #ffb0ec);
+    color: #5a0044;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .container {
+    background: rgba(255,255,255,0.95);
+    width: 90%;
+    max-width: 480px;
+    height: 90%;
+    border-radius: 25px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 0 30px rgba(255,150,220,0.6);
+    text-align: center;
+    position: relative;
+  }
+
+  h1 {
+    font-family: 'Dancing Script', cursive;
+    font-size: 2rem;
+    margin: 0 0 10px 0;
+  }
+
+  p {
+    font-size: 1rem;
+    line-height: 1.4;
+    margin: 5px 0 20px 0;
+  }
+
+  button {
+    background: #ff4fb3;
+    color: white;
+    border: none;
+    padding: 12px 25px;
+    border-radius: 30px;
+    font-size: 1rem;
+    cursor: pointer;
+    box-shadow: 0 0 15px rgba(255,90,190,0.6);
+    transition: transform 0.2s ease;
+  }
+
+  button:hover { transform: scale(1.05); }
+
+  .hidden { display: none; }
+
+  .hearts span {
+    position: absolute;
+    bottom: -10px;
+    color: #ff4fa8;
+    font-size: 1.5rem;
+    animation: float 6s linear infinite;
+    opacity: 0.7;
+  }
+
+  @keyframes float {
+    0% { transform: translateY(0) scale(1); opacity: 0.6; }
+    50% { opacity: 1; }
+    100% { transform: translateY(-800px) scale(1.8); opacity: 0; }
+  }
+</style>
+</head>
+<body>
+
+<div class="hearts">
+  <span style="left:10%; animation-delay:0s;">💗</span>
+  <span style="left:30%; animation-delay:1s;">💖</span>
+  <span style="left:50%; animation-delay:2s;">💕</span>
+  <span style="left:70%; animation-delay:3s;">💞</span>
+  <span style="left:90%; animation-delay:4s;">💘</span>
+</div>
+
+<div class="container">
+  <!-- Note Section -->
+  <div id="noteSection">
+    <h1>💌 A Sweet Note</h1>
+    <p>Sweet, tempting and just for you 😘… unwrap me slowly.<br>
+    <em style="font-family: 'Dancing Script', cursive; color:#9b027f;">– Yours K💖</em></p>
+    <button onclick="showClue()">Next →</button>
+  </div>
+
+  <!-- Clue Section -->
+  <div id="clueSection" class="hidden">
+    <h1>🔐Come Find Me</h1>
+    <p>I am standing tall and waiting behind doors… come look ontop of me.
+    </p>
+  </div>
+</div>
+
+<script>
+function showClue() {
+  document.getElementById('noteSection').classList.add('hidden');
+  document.getElementById('clueSection').classList.remove('hidden');
+}
+</script>
+
+</body>
+</html>
