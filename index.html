@@ -4,7 +4,9 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>2-Year Anniversary 💖</title>
+
 <link href="https://fonts.googleapis.com/css2?family=Dancing+Script&family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+
 <style>
   html, body {
     margin: 0;
@@ -14,22 +16,20 @@
     font-family: 'Poppins', sans-serif;
     background: linear-gradient(135deg, #ffc6e5, #ff9fdb, #ffb0ec);
     color: #5a0044;
-    overflow: hidden;
     display: flex;
     justify-content: center;
-    align-items: center;
+    align-items: flex-start;
+    overflow-y: auto;
   }
 
   .container {
     background: rgba(255,255,255,0.95);
-    width: 90%;
+    width: 92%;
     max-width: 480px;
-    height: 90%;
+    min-height: 90%;
     border-radius: 25px;
     padding: 20px;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
+    margin-top: 25px;
     box-shadow: 0 0 30px rgba(255,150,220,0.6);
     position: relative;
   }
@@ -37,36 +37,33 @@
   h1 {
     font-family: 'Dancing Script', cursive;
     font-size: 2rem;
-    margin: 0;
     text-align: center;
+    margin: 0;
   }
 
   h2 {
     font-size: 1.2rem;
     color: #9b027f;
-    margin: 5px 0 15px 0;
     text-align: center;
+    margin: 10px 0;
   }
 
   p {
+    text-align: center;
     font-size: 1rem;
     line-height: 1.4;
-    margin: 5px 0;
-    text-align: center;
   }
 
   .rules {
     background: #ffe0f2;
     border-radius: 20px;
-    padding: 10px;
-    font-size: 0.95rem;
-    flex-grow: 1;
+    padding: 15px;
+    margin-top: 15px;
+    max-height: 260px;
     overflow-y: auto;
-    margin-bottom: 10px;
   }
 
   ul {
-    margin: 0;
     padding-left: 18px;
   }
 
@@ -78,6 +75,8 @@
     border-radius: 30px;
     font-size: 1rem;
     cursor: pointer;
+    width: 100%;
+    margin-top: 20px;
     box-shadow: 0 0 15px rgba(255,90,190,0.6);
     transition: transform 0.2s ease;
   }
@@ -86,8 +85,9 @@
 
   .hidden { display: none; }
 
+  /* floating hearts */
   .hearts span {
-    position: absolute;
+    position: fixed;
     bottom: -10px;
     color: #ff4fa8;
     font-size: 1.5rem;
@@ -100,9 +100,9 @@
     50% { opacity: 1; }
     100% { transform: translateY(-800px) scale(1.8); opacity: 0; }
   }
-
 </style>
 </head>
+
 <body>
 
 <div class="hearts">
@@ -114,42 +114,46 @@
 </div>
 
 <div class="container">
-  <div>
-<div class="container">
-  <div>
-    <h1>Our Anniversary Scavenger Hunt 💖</h1>
-    <h2>For the One I Love</h2>
-    <p>Tonight we’re having a games night but this one is different. One of the games is a scavenger hunt and this one is special because it was made only for my gorgeous girlfriend. Every clue is a small piece of my heart guiding you through moments I prepared just for you.</p>
+  <h1>Our Anniversary Scavenger Hunt 💖</h1>
+  <h2>For the One I Love</h2>
 
-    <div class="rules">
-  <h3>How It Works</h3>
-  <ul>
-    <li>You’ll start by scanning the first QR code, Which you've already did. It will open your welcome message, which you've read already and these rules.</li>
-    <li>After reading everything you’ll press “Let the FUN Begin🎉”. That will take you to your first location.</li>
-    <li>When you get there check the item waiting for you then scan the QR you find next to it.</li>
-    <li>Read the message that appears then press “Next” to reveal your next clue.</li>
-    <li>You’ll repeat this at each stop until you reach the final surprise I planned for you.</li>
-    <li>Move through the clues at your own pace. This little adventure was made with love for you ❤️</li>
-  </ul>
-    </div>
+  <p>
+    We’re having a games night tonight but this one is close to my heart 💕  
+    One of the games is a scavenger hunt and this one is special because I made it only for my gorgeous girlfriend.  
+    Every clue is a little piece of my love leading you through moments I prepared just for you ✨
+  </p>
+
+  <div class="rules">
+    <h3>How It Works</h3>
+    <ul>
+      <li>You started by scanning the first QR code, which brought you here 💌</li>
+      <li>After reading everything you’ll tap “Let the FUN Begin” 🎉</li>
+      <li>That takes you to your first location.</li>
+      <li>When you get there check the item waiting for you then scan the next QR 📸</li>
+      <li>Read the message that appears then tap “Next” for your next clue.</li>
+      <li>You’ll follow the trail until you reach the final surprise made with love just for you ❤️</li>
+    </ul>
   </div>
-  
-  <div>
-    <button onclick="showFirstClue()">Let the FUN Begin🧨</button>
-    <div id="firstClue" class="hidden" style="margin-top:15px; font-size:1.1rem;">
-      <h3>🔐 Your First Clue</h3>
-      <p>I am where your head rests at night… come lift me😘</p>
-    </div>
+
+  <button onclick="showFirstClue()">Let the FUN Begin🧨</button>
+
+  <div id="firstClue" class="hidden" style="margin-top:15px; font-size:1.1rem;">
+    <h3>🔐 Your First Clue</h3>
+    <p>I’m the place where your head rests every night… lift me and find your first treasure 😘🛏️</p>
   </div>
 </div>
 
 <script>
 function showFirstClue() {
-  document.getElementById('firstClue').classList.remove('hidden');
+  const clue = document.getElementById('firstClue');
+  clue.classList.remove('hidden');
+
+  // auto scroll down to the clue
+  setTimeout(() => {
+    clue.scrollIntoView({ behavior: 'smooth' });
+  }, 200);
 }
 </script>
 
 </body>
-
 </html>
-
